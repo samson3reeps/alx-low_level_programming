@@ -7,7 +7,10 @@
  *
  * Return: Always 0.
  */
+
+char *argstostr(int ac, char **av);
 int main(int ac, char *av[])
+
 {
     char *s;
 
