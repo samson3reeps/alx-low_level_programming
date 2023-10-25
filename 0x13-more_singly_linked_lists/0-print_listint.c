@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stddef.h>
 
 /**
  * print_listint - Display all elements of a linked list
