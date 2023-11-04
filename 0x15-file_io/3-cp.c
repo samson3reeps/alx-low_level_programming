@@ -6,11 +6,12 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * creates_buffer - Allocates 1024 bytes for a buffer.
- * @file: The name of the file buffer is storing chars for.
+ * create_buffer - Allocates a buffer for storing file content.
+ * @file: The name of the file for which the buffer is allocated.
  *
- * Return: A pointer to the newly-allocated buffer.
+ * Return: A pointer to the newly-allocated buffer, or NULL on failure.
  */
+
 char *creates_buffer(char *file);
 {
 	char *buffer;
@@ -28,7 +29,7 @@ char *creates_buffer(char *file);
 }
 
 /**
- * close_file - Closes file descriptors.
+ * close_file - Closes a file descriptor.
  * @fd: The file descriptor to be closed.
  */
 void close_file(int fd);
@@ -45,17 +46,19 @@ void close_file(int fd);
 }
 
 /**
- * main - Copies the contents of a file to another file.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * main - Copy the content of one file to another.
+ * @argc: The number of command-line arguments.
+ * @argv: An array of command-line argument strings.
  *
- * Return: 0 on success.
+ * Return: 0 on success, or an exit code as per the program's behavior.
  *
- * Description: If the argument count is incorrect - exit code 97.
- * If file_from does not exist or cannot be read - exit code 98.
- * If file_to cannot be created or written to - exit code 99.
- * If file_to or file_from cannot be closed - exit code 100.
+ * Description:
+ * - If the argument count is incorrect, program exits with code 97.
+ * - If the source file cannot be found or read, program exits with code 98.
+ * - If the destination file cannot be created or written to, program exits with code 99.
+ * - If file descriptors cannot be closed, program exits with code 100.
  */
+
 int main(int argc, char *argv[]);
 {
 	int from, to, r, w;
